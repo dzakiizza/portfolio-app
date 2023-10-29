@@ -5,7 +5,6 @@ import { subtitle, title } from "@/components/primitives";
 import { siteConfig } from "@/config/site";
 import { Link } from "@nextui-org/link";
 import { button as buttonStyles } from "@nextui-org/theme";
-import { motion } from "framer-motion";
 import NextLink from "next/link";
 import { AiFillGithub } from "react-icons/ai";
 import { TypeAnimation } from "react-type-animation";
@@ -13,7 +12,7 @@ import Reveal from "./reveal";
 
 const HeroSection = () => {
   return (
-    <section className="max-md: relative flex h-[50%] items-center max-md:flex-col max-md:justify-start lg:h-full lg:flex-row lg:justify-center">
+    <section className="max-md: relative flex h-full items-center max-md:h-[50%] max-sm:h-[25%] max-sm:flex-col max-sm:justify-start">
       <Reveal>
         <div className="relative z-20 flex flex-col items-center justify-center gap-10 py-8 md:py-1">
           <div className="inline-block max-w-lg justify-center text-center">

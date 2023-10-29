@@ -1,8 +1,13 @@
 import { subtitle, title } from "@/components/primitives";
 import Reveal from "@/components/reveal";
+import { aboutEduConfig, aboutSkillConfig } from "@/config/about";
+import { Card, CardBody } from "@nextui-org/card";
 import { Divider } from "@nextui-org/divider";
 import { Image } from "@nextui-org/image";
+import { Spacer } from "@nextui-org/spacer";
+import { Tab, Tabs } from "@nextui-org/tabs";
 import clsx from "clsx";
+import Carousel from "./carousel";
 
 const AboutSection = () => {
   return (
@@ -13,29 +18,49 @@ const AboutSection = () => {
           <h1 className={clsx(title(), "mx-4")}>About Me</h1>
           <Divider className="my-4 flex-1" />
         </div>
-        <div className="flex items-center">
-          <div className="relative">
-            <Image
-              alt="hero"
-              src="/profile.jpg"
-              isBlurred
-              isZoomed
-              className="w-[300px] max-md:w-[200px]"
-            />
+        <div className="flex items-start max-md:mt-10 max-md:flex-col max-md:items-center">
+          <Image
+            alt="hero"
+            src="/profile.jpg"
+            isBlurred
+            className="w-[300px] max-md:w-[300px] mt-6"
+            removeWrapper
+          />
+          <div className="container mx-auto flex-col space-y-6 overflow-hidden whitespace-nowrap p-6 max-md:flex max-md:p-0">
+            <Card isBlurred>
+              <CardBody className="whitespace-normal bg-default-50/40">
+                <h2 className={subtitle({ className: "italic" })}>
+                  {aboutSkillConfig.desc}
+                </h2>
+              </CardBody>
+            </Card>
+            <div className="flex w-full flex-col">
+              <Tabs aria-label="Options" variant="underlined">
+                <Tab key="skills" title="Skills">
+                  <Card isBlurred>
+                    <CardBody className="h-60 w-full max-w-full bg-default-50/40 max-lg:h-80 max-sm:h-96">
+                      <ul className="grid grid-cols-3 gap-2 max-md:grid-cols-2">
+                        {aboutSkillConfig.skill_list.map((item, idx) => (
+                          <li key={idx} className="flex items-center">
+                            <item.icon />
+                            <Spacer x={2} />
+                            {item.label}
+                          </li>
+                        ))}
+                      </ul>
+                    </CardBody>
+                  </Card>
+                </Tab>
+                <Tab key="education" title="Educations">
+                  <Card isBlurred>
+                    <CardBody className="h-60 w-full max-w-full bg-default-50/40 max-lg:h-80 max-sm:h-96">
+                      <Carousel contents={aboutEduConfig} />
+                    </CardBody>
+                  </Card>
+                </Tab>
+              </Tabs>
+            </div>
           </div>
-
-          <h2 className={subtitle({ className: "ml-6 mt-6" })}>
-            Dzaki is a bachelor of Information System at BINUS University since
-            February 2022. A Software engineer that highly passionate and
-            interest in technology but also have interest in product design.
-            Experienced in software development process from the concept or
-            problem statement through development and deliver the end product as
-            solution. Capable to work effectively with a different roles and
-            team in dynamic environment. An eager learner who dedicated to
-            improve and maintain tools, also learn new things to maximize
-            productivity so that could get a better result or performance of
-            product.
-          </h2>
         </div>
       </Reveal>
     </section>

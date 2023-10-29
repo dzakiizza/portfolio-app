@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .custom-swiper {
+    @apply relative flex h-full w-full max-w-full;
+  }
+
+  .custom-swiper-active-bullet {
+    @apply !bg-blue-500 !opacity-100;
+  }
+
+  .custom-swiper-bullet {
+    @apply !mx-1 !inline-block !h-2 !w-2 !rounded-[50%] bg-gray-500 opacity-30;
+  }
+}
