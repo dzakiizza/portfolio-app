@@ -56,12 +56,10 @@ export const Navbar = () => {
           <Link isExternal href={siteConfig.links.linkedin} aria-label="Github">
             <AiFillLinkedin className="text-default-500" size={22} />
           </Link>
-          <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
 
       <NavbarContent className="basis-1 pl-4 sm:hidden" justify="end">
-        <ThemeSwitch />
         <NavbarMenuToggle />
       </NavbarContent>
 
