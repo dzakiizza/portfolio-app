@@ -80,7 +80,7 @@ export const aboutSkillConfig = {
 
 export const aboutEduConfig: ContentProps[] = [
   {
-    title: "Bina Nusantara University - Jakarta",
+    title: "Bina Nusantara University",
     subtitle: "Bachelor of Information System",
     period: "(09/2022 - 11/2023)",
     status: "GPA 3.68 / 4.00",

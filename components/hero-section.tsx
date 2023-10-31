@@ -12,7 +12,7 @@ import Reveal from "./reveal";
 
 const HeroSection = () => {
   return (
-    <section className="max-md: relative flex h-full items-center max-md:h-[50%] max-sm:h-[25%] max-sm:flex-col max-sm:justify-start">
+    <section className="flex h-screen items-center max-md:relative max-md:h-[50%] max-sm:h-[25%] max-sm:flex-col max-sm:justify-start">
       <Reveal>
         <div className="relative z-20 flex flex-col items-center justify-center gap-10 py-8 md:py-1">
           <div className="inline-block max-w-lg justify-center text-center">
