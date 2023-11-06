@@ -1,19 +1,19 @@
 "use client";
 
 import ParticlesContainer from "@/components/particles-container";
-import { subtitle, title } from "@/components/primitives";
+import { subtitle, title } from "@/app/lib/primitives";
 import { siteConfig } from "@/config/site";
 import { Link } from "@nextui-org/link";
 import { button as buttonStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
 import { AiFillGithub } from "react-icons/ai";
 import { TypeAnimation } from "react-type-animation";
-import Reveal from "./reveal";
+import MotionWrapper from "./motion-wrapper";
 
 const HeroSection = () => {
   return (
-    <section className="flex h-screen items-center max-md:relative max-md:h-[50%] max-sm:h-[25%] max-sm:flex-col max-sm:justify-start">
-      <Reveal>
+    <section className="relative flex items-center max-sm:h-1/6 max-sm:flex-col max-sm:justify-start md:h-1/4 lg:h-screen max-sm:mt-20">
+      <MotionWrapper>
         <div className="relative z-20 flex flex-col items-center justify-center gap-10 py-8 md:py-1">
           <div className="inline-block max-w-lg justify-center text-center">
             <h1 className={title()}>Hi, I am Dzaki Izza</h1>
@@ -57,7 +57,7 @@ const HeroSection = () => {
             </Link>
           </div>
         </div>
-      </Reveal>
+      </MotionWrapper>
       <ParticlesContainer />
     </section>
   );

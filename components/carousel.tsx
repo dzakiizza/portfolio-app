@@ -1,14 +1,12 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { Button } from "@nextui-org/button";
-import { Pagination, Navigation } from "swiper/modules";
-import { useSwiper } from "swiper/react";
+import React from "react";
 import { BiChevronLeft, BiChevronRight } from "react-icons/bi";
-import { button as buttonStyles } from "@nextui-org/theme";
+import { Navigation, Pagination } from "swiper/modules";
+import { Swiper, useSwiper } from "swiper/react";
 
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export type ContentProps = {
   title?: string;
@@ -48,7 +46,7 @@ const NavigationButton = () => {
   );
 };
 
-const Carousel = (props: { contents: ContentProps[] }) => {
+const Carousel = (props: { children: React.ReactNode }) => {
   return (
     <Swiper
       pagination={{
@@ -63,25 +61,7 @@ const Carousel = (props: { contents: ContentProps[] }) => {
       spaceBetween={100}
       loop={true}
     >
-      {props.contents.map((content, idx) => (
-        <SwiperSlide style={{ width: "100%", maxWidth: "100%" }} key={idx}>
-          <div className="flex h-full w-full flex-col ">
-            <div className="mb-1 flex flex-wrap items-center justify-between max-sm:mb-2">
-              <p className="whitespace-normal text-lg font-semibold text-blue-400 max-md:text-base">
-                {content?.title}
-              </p>
-              <p className="text-gray-400">{content?.period}</p>
-            </div>
-            <div className="flex flex-wrap items-center justify-between">
-              <p className="whitespace-normal text-base font-semibold max-md:text-sm">
-                {content?.subtitle}
-              </p>
-              <p className="text-gray-400">{content?.status}</p>
-            </div>
-            <p className="mt-5 whitespace-normal max-lg:mt-3">{content.desc}</p>
-          </div>
-        </SwiperSlide>
-      ))}
+      {props.children}
       <NavigationButton />
     </Swiper>
   );

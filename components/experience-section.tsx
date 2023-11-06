@@ -1,12 +1,9 @@
 import { experienceConfig } from "@/config/experience";
 import { Accordion, AccordionItem } from "@nextui-org/accordion";
-import { Card, CardBody } from "@nextui-org/card";
-import { Divider } from "@nextui-org/divider";
-import { Image } from "@nextui-org/image";
-import clsx from "clsx";
-import { title } from "./primitives";
-import Reveal from "./reveal";
 import { Avatar } from "@nextui-org/avatar";
+import { Card, CardBody } from "@nextui-org/card";
+import HeaderSection from "./header-section";
+import MotionWrapper from "./motion-wrapper";
 
 const CardExp = ({
   logo,
@@ -26,11 +23,18 @@ const CardExp = ({
   accomplishment: string[];
 }) => {
   return (
-    <Card isBlurred className="w-full border-none lg:w-1/2" shadow="sm">
+    <Card isBlurred className="w-full border-none h-full" shadow="sm">
       <CardBody className="relative flex w-full bg-default-50/70">
         <div className="flex flex-col gap-5">
           <div className="flex items-start gap-5 max-sm:items-center">
-            <Avatar alt={company} src={logo} isBordered size="lg" radius="sm" color="secondary" />
+            <Avatar
+              alt={company}
+              src={logo}
+              isBordered
+              size="lg"
+              radius="sm"
+              color="secondary"
+            />
             <div className="flex w-full justify-between gap-4 max-sm:flex-col">
               <div className="flex flex-col">
                 <p className="text-xl font-semibold max-sm:text-lg">
@@ -81,18 +85,15 @@ const CardExp = ({
 
 const ExperienceSection = () => {
   return (
-    <section className="relative flex flex-col items-center">
-      <Reveal>
-        <div className="relative mb-10 flex w-full items-center justify-evenly">
-          <Divider className="my-4 flex-1" />
-          <h1 className={clsx(title(), "mx-4")}>Experience</h1>
-        </div>
+    <section className="relative flex flex-col items-center mb-20">
+      <MotionWrapper>
+      <HeaderSection content="Experience" line="left"/>
         <div className="flex flex-col items-center gap-10">
           {experienceConfig.map((item, idx) => (
             <CardExp key={idx} {...item} />
           ))}
         </div>
-      </Reveal>
+      </MotionWrapper>
     </section>
   );
 };
