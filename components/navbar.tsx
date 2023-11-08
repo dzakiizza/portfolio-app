@@ -1,26 +1,38 @@
+"use client";
+
 import { Link } from "@nextui-org/link";
 import {
-	NavbarBrand,
-	NavbarContent,
-	NavbarItem,
-	NavbarMenu,
-	NavbarMenuItem,
-	NavbarMenuToggle,
-	Navbar as NextUINavbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenu,
+  NavbarMenuItem,
+  NavbarMenuToggle,
+  Navbar as NextUINavbar,
 } from "@nextui-org/navbar";
-
 import { link as linkStyles } from "@nextui-org/theme";
 
 import { siteConfig } from "@/config/site";
 import clsx from "clsx";
 import NextLink from "next/link";
 
-import { ThemeSwitch } from "@/components/theme-switch";
 import { AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
+import React from "react";
 
 export const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const handleClick = React.useCallback((id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  }, []);
+
   return (
-    <NextUINavbar maxWidth="xl" position="sticky" className="bg-transparent">
+    <NextUINavbar
+      maxWidth="xl"
+      className="fixed  bg-default-50/70"
+      shouldHideOnScroll={false}
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
+    >
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand as="li" className="max-w-fit gap-3">
           <NextLink className="flex items-center justify-start gap-1" href="/">
@@ -30,16 +42,18 @@ export const Navbar = () => {
         <ul className="ml-2 hidden justify-start gap-4 lg:flex">
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
-              <NextLink
+              <p
                 className={clsx(
                   linkStyles({ color: "foreground" }),
-                  "data-[active=true]:font-medium data-[active=true]:text-primary"
+                  "hover:cursor-pointer"
                 )}
                 color="foreground"
-                href={item.href}
+                onClick={() => {
+                  handleClick(item.href);
+                }}
               >
                 {item.label}
-              </NextLink>
+              </p>
             </NavbarItem>
           ))}
         </ul>
@@ -60,26 +74,26 @@ export const Navbar = () => {
       </NavbarContent>
 
       <NavbarContent className="basis-1 pl-4 sm:hidden" justify="end">
-        <NavbarMenuToggle />
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        />
       </NavbarContent>
 
       <NavbarMenu>
         <div className="mx-4 mt-2 flex flex-col gap-2">
-          {siteConfig.navMenuItems.map((item, index) => (
+          {siteConfig.navItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === siteConfig.navMenuItems.length - 1
-                    ? "danger"
-                    : "foreground"
-                }
-                href="#"
-                size="lg"
+              <p
+                className="hover:cursor-pointer"
+                onClick={async () => {
+                  setTimeout(() => {
+                    handleClick(item.href);
+                  }, 100);
+                  setIsMenuOpen(false);
+                }}
               >
                 {item.label}
-              </Link>
+              </p>
             </NavbarMenuItem>
           ))}
         </div>

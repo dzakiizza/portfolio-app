@@ -11,7 +11,7 @@ import { SwiperSlide } from "swiper/react";
 
 const AboutSection = () => {
   return (
-    <section className="relative z-10 flex flex-col items-center justify-center mb-20">
+    <section className="relative z-10 flex flex-col items-center justify-center mb-20" id="about">
       <MotionWrapper>
         <HeaderSection content="About Me" line="right" />
         <div className="flex items-start max-md:flex-col max-md:items-center">

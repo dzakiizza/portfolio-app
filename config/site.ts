@@ -4,60 +4,22 @@ export const siteConfig = {
 	name: "Dzakiizza - Portfolio",
 	description: "A personal website of Dzaki Izza",
 	navItems: [
-		{
-			label: "Home",
-			href: "/",
-		},
     {
-      label: "Docs",
-      href: "/docs",
+      label: "About Me",
+      href: "about",
     },
     {
-      label: "Pricing",
-      href: "/pricing",
+      label: "Experience",
+      href: "experience",
     },
     {
-      label: "Blog",
-      href: "/blog",
+      label: "Project",
+      href: "project",
     },
     {
-      label: "About",
-      href: "/about",
+      label: "Contact",
+      href: "",
     }
-	],
-	navMenuItems: [
-		{
-			label: "Profile",
-			href: "/profile",
-		},
-		{
-			label: "Dashboard",
-			href: "/dashboard",
-		},
-		{
-			label: "Projects",
-			href: "/projects",
-		},
-		{
-			label: "Team",
-			href: "/team",
-		},
-		{
-			label: "Calendar",
-			href: "/calendar",
-		},
-		{
-			label: "Settings",
-			href: "/settings",
-		},
-		{
-			label: "Help & Feedback",
-			href: "/help-feedback",
-		},
-		{
-			label: "Logout",
-			href: "/logout",
-		},
 	],
 	links: {
 		resume: "/resume.pdf",

@@ -12,7 +12,7 @@ import MotionWrapper from "./motion-wrapper";
 
 const HeroSection = () => {
   return (
-    <section className="relative flex items-center max-sm:h-1/6 max-sm:flex-col max-sm:justify-start md:h-1/4 lg:h-screen max-sm:mt-20">
+    <section className="relative flex h-screen items-center justify-center max-sm:flex-col" id="hero">
       <MotionWrapper>
         <div className="relative z-20 flex flex-col items-center justify-center gap-10 py-8 md:py-1">
           <div className="inline-block max-w-lg justify-center text-center">

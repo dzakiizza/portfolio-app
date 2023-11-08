@@ -56,3 +56,4 @@ export const subtitle = tv({
     fullWidth: true,
   },
 });
+

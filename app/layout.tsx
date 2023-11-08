@@ -1,12 +1,15 @@
-import "@/styles/globals.css";
-import { Metadata } from "next";
-import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
-import { Providers } from "./providers";
-import { Navbar } from "@/components/navbar";
-import clsx from "clsx";
-import ScrollbarWrapper from "@/components/scrollbar";
 import BlurBackground from "@/components/blur-background";
+import { Navbar } from "@/components/navbar";
+import ScrollbarWrapper from "@/components/scrollbar";
+import { fontSans } from "@/config/fonts";
+import { siteConfig } from "@/config/site";
+import "@/styles/globals.css";
+import clsx from "clsx";
+import { Metadata } from "next";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Providers } from "./providers";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
   title: {
@@ -43,8 +46,21 @@ export default function RootLayout({
               <main className="container mx-auto max-w-7xl flex-grow px-6">
                 {children}
               </main>
+              <Footer />
             </div>
           </ScrollbarWrapper>
+          <ToastContainer
+            position="top-center"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+          />
         </Providers>
       </body>
     </html>

@@ -85,7 +85,7 @@ const CardExp = ({
 
 const ExperienceSection = () => {
   return (
-    <section className="relative flex flex-col items-center mb-20">
+    <section className="relative flex flex-col items-center mb-20" id="experience">
       <MotionWrapper>
       <HeaderSection content="Experience" line="left"/>
         <div className="flex flex-col items-center gap-10">
