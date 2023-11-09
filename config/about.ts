@@ -13,7 +13,7 @@ import {
 import { SiNextdotjs, SiPostgresql, SiVercel, SiTableau } from "react-icons/si";
 
 export const aboutSkillConfig = {
-  desc: "“Dzaki is a bachelor of Information System at BINUS University since February 2022. A Software engineer that highly passionate and interest in technology but also have interest in product design. Experienced in software development process from the concept or problem statement through development and deliver the end product as solution. Capable to work effectively with a different roles and team in dynamic environment. An eager learner who dedicated to improve and maintain tools, also learn new things to maximize productivity so that could get a better result or performance of product.“",
+  desc: "“Dzaki is a bachelor of Information System at BINUS University since February 2022. A tech enthusiast with a deep passion for technology and a keen interest in product design, seamlessly blending consulting and management expertise to navigate the dynamic intersection of innovation and user-centric solutions. Experienced in software development process from the concept or problem statement through development and deliver the end product as solution. Capable to work effectively with a different roles and team in dynamic environment. An eager learner who dedicated to improve and maintain tools, also learn new things to maximize productivity so that could get a better result or performance of product.“",
   skill_list: [
     {
       icon: AiFillHtml5,
@@ -82,7 +82,7 @@ export const aboutEduConfig: ContentProps[] = [
   {
     title: "Bina Nusantara University",
     subtitle: "Bachelor of Information System",
-    period: "(09/2022 - 11/2023)",
+    period: "(09/2018 - 02/2022)",
     status: "GPA 3.68 / 4.00",
     desc: "My Cumulative GPA 3.68 out of 4.00, major in Business Intelligence. As an IS student, technology is my domain to explore such as programming, database system, data mining, project management and application design.",
   },

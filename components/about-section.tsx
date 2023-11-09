@@ -19,7 +19,7 @@ const AboutSection = () => {
             alt="hero"
             src="/profile.jpg"
             isBlurred
-            className="mt-6 w-[300px] max-md:w-[300px]"
+            className="my-6 w-[300px] max-md:w-[300px]"
             removeWrapper
           />
           <div className="container mx-auto flex-col space-y-6 overflow-hidden whitespace-nowrap p-6 max-md:flex max-md:p-0">

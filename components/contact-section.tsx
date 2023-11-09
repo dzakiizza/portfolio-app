@@ -11,6 +11,7 @@ import { toast } from "react-toastify";
 import HeaderSection from "./header-section";
 import MotionWrapper from "./motion-wrapper";
 import EmailValidator from "email-validator";
+import { siteConfig } from "@/config/site";
 
 const ContactSection = () => {
   const { handleSubmit, register, reset, formState } =
@@ -44,10 +45,10 @@ const ContactSection = () => {
               I&apos;ll try my best to get back to you!
             </p>
             <div className="socials flex flex-row gap-2">
-              <Link href="github.com">
+              <Link href={siteConfig.links.github} target="_blank">
                 <AiFillGithub size={48} />
               </Link>
-              <Link href="linkedin.com">
+              <Link href={siteConfig.links.linkedin} target="_blank">
                 <AiFillLinkedin size={48} />
               </Link>
             </div>

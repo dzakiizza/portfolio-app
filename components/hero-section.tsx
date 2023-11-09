@@ -12,23 +12,36 @@ import MotionWrapper from "./motion-wrapper";
 
 const HeroSection = () => {
   return (
-    <section className="relative flex h-screen items-center justify-center max-sm:flex-col" id="hero">
+    <section
+      className="relative flex h-screen items-center justify-center max-sm:flex-col"
+      id="hero"
+    >
       <MotionWrapper>
         <div className="relative z-20 flex flex-col items-center justify-center gap-10 py-8 md:py-1">
           <div className="inline-block max-w-lg justify-center text-center">
             <h1 className={title()}>Hi, I am Dzaki Izza</h1>
             <br />
+            <br />
             <h1 className={title({ color: "violet" })}>
               <TypeAnimation
-                sequence={["Web Developer", 1500, "UI/UX Designer", 1500]}
+                sequence={[
+                  "Tech Enthusiast",
+                  1500,
+                  "Long Life Learner",
+                  1500,
+                  "Developer",
+                  1500,
+                  "Designer",
+                  1500,
+                ]}
                 wrapper="span"
                 speed={40}
                 repeat={Infinity}
               />{" "}
             </h1>
             <h2 className={subtitle({ className: "mt-6" })}>
-              A Software engineer that highly passionate and interest in
-              technology but also have interest in product design.
+              Highly interest in technology, product design,
+              merging consulting and management skills for innovative
             </h2>
           </div>
 

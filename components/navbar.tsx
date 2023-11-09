@@ -16,8 +16,8 @@ import { siteConfig } from "@/config/site";
 import clsx from "clsx";
 import NextLink from "next/link";
 
-import { AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
 import React from "react";
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -65,7 +65,7 @@ export const Navbar = () => {
       >
         <NavbarItem className="hidden gap-2 sm:flex">
           <Link isExternal href={siteConfig.links.github} aria-label="Github">
-            <AiFillInstagram className="text-default-500" size={22} />
+            <AiFillGithub className="text-default-500" size={22} />
           </Link>
           <Link isExternal href={siteConfig.links.linkedin} aria-label="Github">
             <AiFillLinkedin className="text-default-500" size={22} />
@@ -96,6 +96,18 @@ export const Navbar = () => {
               </p>
             </NavbarMenuItem>
           ))}
+          <div className="flex gap-5 mt-10">
+            <Link isExternal href={siteConfig.links.github} aria-label="Github">
+              <AiFillGithub className="text-default-500" size={22} />
+            </Link>
+            <Link
+              isExternal
+              href={siteConfig.links.linkedin}
+              aria-label="Github"
+            >
+              <AiFillLinkedin className="text-default-500" size={22} />
+            </Link>
+          </div>
         </div>
       </NavbarMenu>
     </NextUINavbar>
