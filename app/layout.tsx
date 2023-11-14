@@ -2,7 +2,6 @@ import BlurBackground from "@/components/blur-background";
 import { Navbar } from "@/components/navbar";
 import ScrollbarWrapper from "@/components/scrollbar";
 import { fontSans } from "@/config/fonts";
-import { siteConfig } from "@/config/site";
 import "@/styles/globals.css";
 import clsx from "clsx";
 import { Metadata } from "next";
@@ -10,18 +9,10 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Providers } from "./providers";
 import Footer from "@/components/footer";
+import { metaConfig } from "@/config/meta";
 
 export const metadata: Metadata = {
-  title: {
-    default: siteConfig.name,
-    template: `%s - ${siteConfig.name}`,
-  },
-  description: siteConfig.description,
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon-16x16.png",
-    apple: "/apple-touch-icon.png",
-  },
+  ...metaConfig,
 };
 
 export default function RootLayout({
