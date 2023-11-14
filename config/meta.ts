@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 
 export const metaConfig: Metadata = {
+  metadataBase: new URL("https://dzakiizza-portfolio-app.vercel.app"),
   title: "Dzakiizza - Portfolio",
   description: "A personal website of Dzaki Izza",
   keywords: [
@@ -24,7 +25,7 @@ export const metaConfig: Metadata = {
     siteName: "A personal website of Dzaki Izza",
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/logo.ico",
     shortcut: "/favicon-16x16.png",
     apple: "/apple-touch-icon.png",
   },
