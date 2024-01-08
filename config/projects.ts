@@ -34,7 +34,7 @@ export const projectsConfig: ProjectConfigProps[] = [
       "Buatin.App is an application builder that allows you to create applications tailored to your business needs. Using No-Code Development Platform technology, the application can be developed in a quick and affordable way",
     skills: ["React", "Next Js", "TS", "Chakra UI"],
     links: {
-      visit: "https://www.feedloop.ai/",
+      visit: "https://buatin.app/",
     },
   },
   {
