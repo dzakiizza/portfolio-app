@@ -75,7 +75,7 @@ const ModalProject = ({
                     variant: "light",
                     radius: "full",
                   })}
-                  href=""
+                  href={links.github}
                 >
                   <AiFillGithub size={20} />
                   GitHub
@@ -90,7 +90,7 @@ const ModalProject = ({
                     radius: "full",
                     variant: "faded",
                   })}
-                  href=""
+                  href={links.detail}
                 >
                   <AiTwotoneFileAdd size={20} />
                   Detail
@@ -106,7 +106,7 @@ const ModalProject = ({
                     radius: "full",
                     variant: "solid",
                   })}
-                  href=""
+                  href={links.visit}
                 >
                   <BiLinkExternal size={20} />
                   Visit
